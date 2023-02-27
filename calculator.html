@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        *{
+            padding: 10px;
+        }
+        .body{
+            background: #000;
+        }
+        .main{
+            display: block;
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 90vh;
+            width: 500px ;
+            margin: auto;
+           background-image:linear-gradient( 45deg ,rgb(49, 24, 102) 40%,rgb(168, 21, 151) 100% );
+            padding-left: 0px;
+        }
+        .display{
+            border: 2px solid black;
+            height: 120px;
+            border-radius: 8px;
+            background-color: rgb(236, 245, 252);
+            margin: 10px 10px 10px 20px;
+        }
+        .pad{
+            height: 450px;
+            display: flex;
+            padding-left:20px ;
+            justify-content: space-between;
+            align-items: end;
+            /* border: 2px solid rgb(240, 234, 234); */
+        }
+        .button{
+            border: 2px solid black;
+            height: 20%;
+            width:  80px;
+            font-size: 60px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: rgb(231, 226, 226);
+            margin: 5px;
+            padding: 5px;     
+        }
+        .button:hover{
+            background-color: rgb(255, 255, 255);
+        }
+        .no1,.no2,.no3,.no4{
+            /* border: 2px solid rgb(240, 234, 234); */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px;
+            padding: 10px;
+
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="display"></div>
+        <div class="pad">
+            <div class="no1">
+            <button class="button" title="7">7</button>
+            <button class="button" title="4">4</button>
+            <button class="button" title="1">1</button>
+            <button class="button" title=".">.</button>
+            </div>
+            <div class="no2">
+            <button class="button" title="8">8</button>
+            <button class="button" title="5">5</button>
+            <button class="button" title="2">2</button>
+            <button class="button" title="0">0</button>
+            </div>
+            <div class="no3">
+            <button class="button" title="9">9</button>
+            <button class="button" title="6">6</button>
+            <button class="button" title="3">3</button>
+            <button class="button" title="="><span>&equals;</span></button>
+            </div>
+            <div class="no4">
+            <button class="button" title="+"><span>&plus; </span></button>
+            <button class="button" title="-"><span>&minus;</span></button>
+            <button class="button" title="x"><span>&times;</span></button>
+            <button class="button" title="/"><span>&div;  </span></button>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
