@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+         * {
+            --color1: rgb(0, 255, 204);
+            --color2: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+            background-color: var(--color2);
+            
+        }
+        #hour,#min,#sec{
+            height: 50px;
+            width: 70px;
+            font-size: 45px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 5px;
+            margin: 10px;
+            -webkit-text-stroke: 1px var(--color1) ;
+            color: transparent;
+            border-bottom: 5px solid var(--color1);
+            border-top: 5px solid var(--color1); ;
+            text-align: center;
+            padding:10px 8px;
+            animation: beep;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        .col{
+            height: 50px;
+            width: 20px;
+            font-size: 50px;
+            padding-bottom: 10px;
+            margin: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: var(--color1
+            );
+            color: var(--color1);
+            animation: beep;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            /* visibility: hidden */
+            transition-duration: 1s;
+        }
+        @keyframes beep {
+            from {
+               
+               color: var(--color2);
+            }
+            to {
+              color: var(--color1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="hour"></div>
+        <div class="col">:</div>
+        <div id="min"></div>
+        <div class="col">:</div>
+        <div id="sec"></div>
+    </div>
+    <script>
+
+
+
+        setInterval(time, 1000);
+        function time() {
+            let date = new Date();
+
+            let h = date.getHours();
+            // console.log(h);
+            let minute = date.getMinutes();
+            // console.log(minute);
+            let second = date.getSeconds();
+            hour.innerHTML = h;
+            min.innerHTML = minute;
+            sec.innerHTML = second;
+            // console.log(date);
+
+            // console.log(second);
+        };
+    </script>
+</body>
+
+</html>
