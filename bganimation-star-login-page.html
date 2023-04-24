@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css">
+   <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    overflow: hidden;
+  }
+ 
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    transform: rotate(-45deg);
+  }
+  
+  .star {
+    --star-color: var(--primary-color);
+    --star-tail-length: 6em;
+    --star-tail-height: 2px;
+    --star-width: calc(var(--star-tail-length) / 6);
+    --fall-duration: 9s;
+    --tail-fade-duration: var(--fall-duration);
+    position: absolute;
+    top: var(--top-offset);
+    left: 0;
+    width: var(--star-tail-length);
+    height: var(--star-tail-height);
+    color: var(--star-color);
+    background: linear-gradient(45deg, currentColor, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px currentColor);
+    transform: translate3d(104em, 0, 0);
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  }
+  @media screen and (max-width: 750px) {
+    .star {
+      animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    }
+  }
+  .star:nth-child(1) {
+    --star-tail-length: 5.42em;
+    --top-offset: 19.23vh;
+    --fall-duration: 7.073s;
+    --fall-delay: 6.596s;
+  }
+  .star:nth-child(2) {
+    --star-tail-length: 5.55em;
+    --top-offset: 74.83vh;
+    --fall-duration: 9.973s;
+    --fall-delay: 9.277s;
+  }
+  .star:nth-child(3) {
+    --star-tail-length: 6.67em;
+    --top-offset: 34.41vh;
+    --fall-duration: 8.779s;
+    --fall-delay: 6.764s;
+  }
+  .star:nth-child(4) {
+    --star-tail-length: 6.04em;
+    --top-offset: 78.08vh;
+    --fall-duration: 9.866s;
+    --fall-delay: 8.206s;
+  }
+  .star:nth-child(5) {
+    --star-tail-length: 6.31em;
+    --top-offset: 65.14vh;
+    --fall-duration: 7.1s;
+    --fall-delay: 2.419s;
+  }
+  .star:nth-child(6) {
+    --star-tail-length: 7.16em;
+    --top-offset: 1.38vh;
+    --fall-duration: 11.463s;
+    --fall-delay: 1.763s;
+  }
+  .star:nth-child(7) {
+    --star-tail-length: 6.56em;
+    --top-offset: 85.31vh;
+    --fall-duration: 9.042s;
+    --fall-delay: 9.406s;
+  }
+  .star:nth-child(8) {
+    --star-tail-length: 7.38em;
+    --top-offset: 10.99vh;
+    --fall-duration: 7.956s;
+    --fall-delay: 3.846s;
+  }
+  .star:nth-child(9) {
+    --star-tail-length: 6.27em;
+    --top-offset: 76.04vh;
+    --fall-duration: 7.572s;
+    --fall-delay: 3.497s;
+  }
+  .star:nth-child(10) {
+    --star-tail-length: 7.2em;
+    --top-offset: 85.6vh;
+    --fall-duration: 11.806s;
+    --fall-delay: 0.977s;
+  }
+  .star:nth-child(11) {
+    --star-tail-length: 6.98em;
+    --top-offset: 63.39vh;
+    --fall-duration: 9.202s;
+    --fall-delay: 7.904s;
+  }
+  .star:nth-child(12) {
+    --star-tail-length: 6.89em;
+    --top-offset: 86.25vh;
+    --fall-duration: 11.229s;
+    --fall-delay: 1.347s;
+  }
+  .star:nth-child(13) {
+    --star-tail-length: 5.26em;
+    --top-offset: 55.89vh;
+    --fall-duration: 11.847s;
+    --fall-delay: 4.132s;
+  }
+  .star:nth-child(14) {
+    --star-tail-length: 5.58em;
+    --top-offset: 24.01vh;
+    --fall-duration: 11.09s;
+    --fall-delay: 2.494s;
+  }
+  .star:nth-child(15) {
+    --star-tail-length: 5.58em;
+    --top-offset: 7.77vh;
+    --fall-duration: 7.321s;
+    --fall-delay: 3.298s;
+  }
+  .star:nth-child(16) {
+    --star-tail-length: 6.28em;
+    --top-offset: 42.68vh;
+    --fall-duration: 10.965s;
+    --fall-delay: 7.798s;
+  }
+  .star:nth-child(17) {
+    --star-tail-length: 7.06em;
+    --top-offset: 89.86vh;
+    --fall-duration: 9.104s;
+    --fall-delay: 0.194s;
+  }
+  .star:nth-child(18) {
+    --star-tail-length: 7.04em;
+    --top-offset: 38.58vh;
+    --fall-duration: 9.87s;
+    --fall-delay: 4.619s;
+  }
+  .star:nth-child(19) {
+    --star-tail-length: 6.74em;
+    --top-offset: 10.8vh;
+    --fall-duration: 11.188s;
+    --fall-delay: 9.742s;
+  }
+  .star:nth-child(20) {
+    --star-tail-length: 5.15em;
+    --top-offset: 14.01vh;
+    --fall-duration: 10.206s;
+    --fall-delay: 2.123s;
+  }
+  .star:nth-child(21) {
+    --star-tail-length: 6.28em;
+    --top-offset: 83.53vh;
+    --fall-duration: 8.352s;
+    --fall-delay: 3.056s;
+  }
+  .star:nth-child(22) {
+    --star-tail-length: 5.14em;
+    --top-offset: 58.42vh;
+    --fall-duration: 10.092s;
+    --fall-delay: 9.121s;
+  }
+  .star:nth-child(23) {
+    --star-tail-length: 6.07em;
+    --top-offset: 55.59vh;
+    --fall-duration: 8.437s;
+    --fall-delay: 5.139s;
+  }
+  .star:nth-child(24) {
+    --star-tail-length: 6.92em;
+    --top-offset: 91.37vh;
+    --fall-duration: 11.545s;
+    --fall-delay: 0.933s;
+  }
+  .star:nth-child(25) {
+    --star-tail-length: 6.68em;
+    --top-offset: 72.5vh;
+    --fall-duration: 11.761s;
+    --fall-delay: 4.171s;
+  }
+  .star:nth-child(26) {
+    --star-tail-length: 5.19em;
+    --top-offset: 8.82vh;
+    --fall-duration: 8.147s;
+    --fall-delay: 5.642s;
+  }
+  .star:nth-child(27) {
+    --star-tail-length: 6.11em;
+    --top-offset: 31.69vh;
+    --fall-duration: 6.077s;
+    --fall-delay: 9.131s;
+  }
+  .star:nth-child(28) {
+    --star-tail-length: 5.01em;
+    --top-offset: 5.74vh;
+    --fall-duration: 10.168s;
+    --fall-delay: 9.139s;
+  }
+  .star:nth-child(29) {
+    --star-tail-length: 5.9em;
+    --top-offset: 69.1vh;
+    --fall-duration: 11.14s;
+    --fall-delay: 8.677s;
+  }
+  .star:nth-child(30) {
+    --star-tail-length: 5.54em;
+    --top-offset: 90.15vh;
+    --fall-duration: 10.218s;
+    --fall-delay: 2.264s;
+  }
+  .star:nth-child(31) {
+    --star-tail-length: 6.36em;
+    --top-offset: 48.74vh;
+    --fall-duration: 6.828s;
+    --fall-delay: 9.951s;
+  }
+  .star:nth-child(32) {
+    --star-tail-length: 5.91em;
+    --top-offset: 62.18vh;
+    --fall-duration: 9.878s;
+    --fall-delay: 1.65s;
+  }
+  .star:nth-child(33) {
+    --star-tail-length: 5.18em;
+    --top-offset: 50.53vh;
+    --fall-duration: 8.165s;
+    --fall-delay: 9.172s;
+  }
+  .star:nth-child(34) {
+    --star-tail-length: 5.13em;
+    --top-offset: 24.37vh;
+    --fall-duration: 11.308s;
+    --fall-delay: 7.781s;
+  }
+  .star:nth-child(35) {
+    --star-tail-length: 7.31em;
+    --top-offset: 62.13vh;
+    --fall-duration: 11.105s;
+    --fall-delay: 3.846s;
+  }
+  .star:nth-child(36) {
+    --star-tail-length: 5.39em;
+    --top-offset: 0.24vh;
+    --fall-duration: 6.059s;
+    --fall-delay: 5.1s;
+  }
+  .star:nth-child(37) {
+    --star-tail-length: 5.52em;
+    --top-offset: 10.56vh;
+    --fall-duration: 11.649s;
+    --fall-delay: 5.899s;
+  }
+  .star:nth-child(38) {
+    --star-tail-length: 6.46em;
+    --top-offset: 43.46vh;
+    --fall-duration: 9.526s;
+    --fall-delay: 9.411s;
+  }
+  .star:nth-child(39) {
+    --star-tail-length: 7.38em;
+    --top-offset: 80.47vh;
+    --fall-duration: 7.657s;
+    --fall-delay: 4.743s;
+  }
+  .star:nth-child(40) {
+    --star-tail-length: 5em;
+    --top-offset: 76.78vh;
+    --fall-duration: 7.965s;
+    --fall-delay: 1.479s;
+  }
+  .star:nth-child(41) {
+    --star-tail-length: 6.67em;
+    --top-offset: 17.49vh;
+    --fall-duration: 7.596s;
+    --fall-delay: 0.41s;
+  }
+  .star:nth-child(42) {
+    --star-tail-length: 6.78em;
+    --top-offset: 28.82vh;
+    --fall-duration: 8.654s;
+    --fall-delay: 6.505s;
+  }
+  .star:nth-child(43) {
+    --star-tail-length: 6.15em;
+    --top-offset: 1.38vh;
+    --fall-duration: 7.442s;
+    --fall-delay: 1.043s;
+  }
+  .star:nth-child(44) {
+    --star-tail-length: 6.54em;
+    --top-offset: 50.47vh;
+    --fall-duration: 7.074s;
+    --fall-delay: 1.366s;
+  }
+  .star:nth-child(45) {
+    --star-tail-length: 6.38em;
+    --top-offset: 36.01vh;
+    --fall-duration: 7.176s;
+    --fall-delay: 4.067s;
+  }
+  .star:nth-child(46) {
+    --star-tail-length: 5.08em;
+    --top-offset: 29.87vh;
+    --fall-duration: 11.218s;
+    --fall-delay: 6.713s;
+  }
+  .star:nth-child(47) {
+    --star-tail-length: 6.93em;
+    --top-offset: 0.54vh;
+    --fall-duration: 8.125s;
+    --fall-delay: 2.864s;
+  }
+  .star:nth-child(48) {
+    --star-tail-length: 6.97em;
+    --top-offset: 20.75vh;
+    --fall-duration: 9.583s;
+    --fall-delay: 0s;
+  }
+  .star:nth-child(49) {
+    --star-tail-length: 5.37em;
+    --top-offset: 18.5vh;
+    --fall-duration: 11.174s;
+    --fall-delay: 1.378s;
+  }
+  .star:nth-child(50) {
+    --star-tail-length: 5.8em;
+    --top-offset: 57.78vh;
+    --fall-duration: 11.109s;
+    --fall-delay: 2.703s;
+  }
+  .star::before, .star::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+  .star::before {
+    transform: rotate(45deg);
+  }
+  .star::after {
+    transform: rotate(-45deg);
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translate3d(-30em, 0, 0);
+    }
+  }
+  @keyframes tail-fade {
+    0%, 50% {
+      width: var(--star-tail-length);
+      opacity: 1;
+    }
+    70%, 80% {
+      width: 0;
+      opacity: 0.4;
+    }
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0.6;
+    }
+  }
+ 
+  .login-box {
+    /* --star-color: var(--primary-color); */
+	width: 320px;
+	height: 420px;
+	background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+	color: var(--primary-color);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+    box-shadow: 0.1px 0.1px 1px 1px hsl(196, 78%, 61%);
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.login-box label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+.login-box input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: hsla(196, 78%, 61%, 0.356); /* Firefox */
+  }
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+	border: none;
+	border-bottom: 1px solid hsl(196, 78%, 61%);
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: hsl(196, 78%, 61%);
+	font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: hsl(196, 82%, 59%);
+	color: #000000;
+	font-size: 18px;
+	border-radius: 20px;
+	cursor: pointer;
+    margin-top: 40px;
+}
+
+.login-box input[type="submit"]:hover {
+	background: hsl(196, 78%, 61%);
+	color: #000000;
+    box-shadow: 1px 1px 5px 5px hsl(196, 71%, 64%);
+    border: solid #0d1d31 1px;
+}
+
+   </style>
+  </head>
+  
+  <body>
+    <div class="stars">
+    
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    </div>
+  <div class="login-box">
+		<h1>Login</h1>
+		<form>
+			<label for="username">Username</label>
+			<input type="text" name="username" placeholder="Enter Username" required>
+
+			<label for="password">Password</label>
+			<input type="password" name="password" placeholder="Enter Password" required>
+
+			<input type="submit" value="Login">
+		</form>
+	</div>
+  </body>
+  </html>
+  
